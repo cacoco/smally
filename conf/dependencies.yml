@@ -1,0 +1,5 @@
+# Application dependencies
+
+require:
+    - play -> spring 1.0.1
+    - org.json -> json 20090211
