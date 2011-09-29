@@ -1,7 +1,7 @@
 package controllers;
 
+import com.google.gson.JsonObject;
 import play.Logger;
-import play.Play;
 import play.cache.Cache;
 import play.modules.spring.Spring;
 import play.mvc.Controller;
@@ -44,6 +44,8 @@ public class Mapper extends Controller {
                 baseUrl,
                 Long.toString(count, INSTANCE_ENCODING_RADIX));
 
-        render(shortened);
+        JsonObject json = new JsonObject();
+        json.addProperty("smally-url", shortened);
+        renderJSON(json.toString());
     }
 }
